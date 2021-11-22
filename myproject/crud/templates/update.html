@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+<h2>ADD STUDENT</h2>
+<hr>
+ <form action="{{student.id}}" method = 'POST'>
+ {% csrf_token %}
+  <div class="form-group">
+    <label for="">ID</label>
+    <input type="text" name="sid" value="{{student.sid}}" class="form-control">
+  </div>
+ <div class="form-group">
+    <label for="">Name</label>
+    <input type="text" value="{{student.sname}}" name="sname" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="">Contact</label>
+    <input type="text" value="{{student.scontact}}" name="scontact" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary my-2">UPDATE</button>
+  <a href="{% url 'show' %}" class="btn btn-primary my-2">SHOW</a>
+
+</form>
+</div>
+
+
+{% endblock content %}

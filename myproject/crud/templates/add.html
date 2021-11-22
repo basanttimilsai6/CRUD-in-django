@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+<h2>ADD STUDENT</h2>
+<hr>
+
+ <form action="" method = 'POST'>
+ {% csrf_token %}
+  <div class="form-group">
+    <label for="">ID</label>
+    <input type="text" name="sid" class="form-control">
+  </div>
+ <div class="form-group">
+    <label for="">Name</label>
+    <input type="text" name="sname" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="">Contact</label>
+    <input type="text" name="scontact" class="form-control">
+  </div>
+  {% comment %} <a href="{% url 'add' %}" class="btn btn-primary my-2">Add</a> {% endcomment %}
+  <button type="submit" class="btn btn-success my-2">ADD RECORD</button>
+  <a href="{% url 'show' %}" class="btn btn-primary my-2">SHOW</a>
+
+</form>
+</div>
+
+
+{% endblock content %}

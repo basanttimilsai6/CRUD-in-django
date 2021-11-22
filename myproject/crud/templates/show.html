@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+<h2>SHOW STUDENT</h2>
+<hr>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">CONTACT</th>
+      <th scope="col">ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for s in student %}
+    <tr>
+      <td>{{s.sid}}</td>
+      <td>{{s.sname}}</td>
+      <td>{{s.scontact}}</td>
+      
+      <td>
+      <a href='update/{{s.id}}' class="btn btn-sm btn-outline-primary">EDIT</a>
+      <a href='delete/{{s.id}}' class="btn btn-sm btn-outline-danger">DELETE</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+{% endblock content %}
